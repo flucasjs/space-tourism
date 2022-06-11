@@ -144,10 +144,18 @@ const utilityClasses = css`
 
   .grid-container {
     display: grid;
+    text-align: center;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .grid-container * {
+    max-width: 50ch;
   }
 
   @media (min-width: 45rem) {
     .grid-container {
+      text-align: left;
       grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
       column-gap: var(--container-gap, 2rem);
     }
@@ -158,6 +166,11 @@ const utilityClasses = css`
 
     .grid-container > *:last-child {
       grid-column: 3;
+    }
+
+    .grid-container--home {
+      padding-bottom: max(6rem, 20vh);
+      align-items: end;
     }
   }
 
@@ -237,6 +250,7 @@ const componentClasses = css`
   }
 
   .large-button {
+    font-size: 2rem;
     display: inline-grid;
     position: relative;
     place-items: center;
@@ -345,11 +359,18 @@ const componentClasses = css`
   }
 `
 
+const pageSpecificBackgrounds = css`
+  .home {
+    background-image: url(../assets/home/background-home-mobile.jpg);
+  }
+`
+
 export const GlobalStyle = createGlobalStyle`
   ${customCSSProperties}
   ${resets}
   ${utilityClasses}
   ${componentClasses}
+  ${pageSpecificBackgrounds}
 `
 
 export default function DesignSystemLayout({ children }) {
