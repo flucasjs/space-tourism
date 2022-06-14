@@ -358,19 +358,11 @@ const componentClasses = css`
     color: hsl( var(--clr-dark) / 1 );
   }
 `
-
-const pageSpecificBackgrounds = css`
-  .home {
-    background-image: url(../assets/home/background-home-mobile.jpg);
-  }
-`
-
 export const GlobalStyle = createGlobalStyle`
   ${customCSSProperties}
   ${resets}
   ${utilityClasses}
   ${componentClasses}
-  ${pageSpecificBackgrounds}
 `
 
 export default function DesignSystemLayout({ children }) {
@@ -471,24 +463,24 @@ export default function DesignSystemLayout({ children }) {
                     
                     <div className="flow" style={{ marginBottom: "50vh", "--flow-space": "4rem" }}>
                         {/* Tabs */}
-                        <div className="tab-list underline-indicators flex">
-                            <button aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
-                            <button aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
-                            <button aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+                        <div role="tablist" className="tab-list underline-indicators flex">
+                            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
+                            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
+                            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
                         </div>
                         
                         {/* Dots */}
-                        <div className="dot-indicators flex">
-                            <button aria-selected="true"><span className="sr-only">Slide title</span></button>
-                            <button aria-selected="false"><span className="sr-only">Slide title</span></button>
-                            <button aria-selected="false"><span className="sr-only">Slide title</span></button>
+                        <div role="tablist" className="dot-indicators flex">
+                            <button role="tab" aria-selected="true"><span className="sr-only">Slide title</span></button>
+                            <button role="tab" aria-selected="false"><span className="sr-only">Slide title</span></button>
+                            <button role="tab" aria-selected="false"><span className="sr-only">Slide title</span></button>
                         </div>
 
                         {/* Numbers */}
-                        <div className="number-indicators flow">
-                            <button className="ff-serif fs-600"aria-selected="true">1</button>
-                            <button className="ff-serif fs-600"aria-selected="false">2</button>
-                            <button className="ff-serif fs-600"aria-selected="false">3</button>
+                        <div role="tablist" className="number-indicators flow">
+                            <button role="tab" className="ff-serif fs-600"aria-selected="true">1</button>
+                            <button role="tab" className="ff-serif fs-600"aria-selected="false">2</button>
+                            <button role="tab" className="ff-serif fs-600"aria-selected="false">3</button>
                         </div>
                     </div>
                 </div>
