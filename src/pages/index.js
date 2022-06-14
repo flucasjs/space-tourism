@@ -37,14 +37,17 @@ const IndexPage = () => {
                 src="../assets/shared/logo.svg"
               />
             </div>
-            {/* <nav>
-                <ul className="primary-navigation underline-indicators flex">
+            <button className="mobile-nav-toggle" aria-controls="primary-navigation">
+              <span className="sr-only" aria-expanded="false">Menu</span>
+            </button>
+            <nav>
+                <ul id="primary-navigation" className="primary-navigation underline-indicators flex">
                     <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>03</span>Technology</a></li>
                 </ul>
-            </nav> */}
+            </nav>
         </PrimaryHeader>
 
         <div className="grid-container grid-container--home">
