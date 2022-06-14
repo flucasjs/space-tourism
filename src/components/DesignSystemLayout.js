@@ -276,13 +276,36 @@ const componentClasses = css`
     transform: scale(1.5);
   }
 
-  
   .primary-navigation {
-      --gap: 8rem;
       --underline-gap: 2rem;
       list-style: none;
       margin: 0;
       padding: 0;
+      background-color: hsl( var(--clr-dark) / 0.95 );
+  }
+
+  @supports (backdrop-filter: blur(1.5rem)) {
+    .primary-navigation {
+      background-color: hsl( var(--clr-white) / 0.05 );
+      backdrop-filter: blur(1.5rem);
+    }
+  }
+
+  @media (max-width: 35rem) {
+    .primary-navigation {
+      --underline-gap: 0.5rem;
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 0 30%;
+      list-style: none;
+      padding: min(20rem, 15vh) 2rem;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .primary-navigation.underline-indicator > .active {
+      border: 0;
+    }
   }
 
   .primary-navigation a {
@@ -393,7 +416,7 @@ export default function DesignSystemLayout({ children }) {
               </div>
           </section>
           
-          <section id="typography"  style={{margin: "4rem 0"}}>
+          <section id="typography" style={{margin: "4rem 0"}}>
               <h2 className="numbered-title"><span>02 </span>Typography</h2>
               <div className="flex">
                   <div className="flow" style={{flexBasis: "100%"}}>
