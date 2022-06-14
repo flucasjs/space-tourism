@@ -306,6 +306,7 @@ const componentClasses = css`
       padding: min(20rem, 15vh) 2rem;
       margin: 0;
       flex-direction: column;
+      transform: translateX(100%);
     }
 
     .primary-navigation.underline-indicator > .active {
