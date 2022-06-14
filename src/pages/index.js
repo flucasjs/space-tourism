@@ -1,15 +1,34 @@
-import React from "react"
-import styled from "styled-components"
-import Layout from "../components/Layout"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react'
+import styled, {css} from 'styled-components'
+import Layout from '../components/Layout'
+import { StaticImage} from 'gatsby-plugin-image'
+
+import backgroundMobile from "../assets/home/background-home-mobile.jpg"
+import backgroundTablet from "../assets/home/background-home-tablet.jpg"
+import backgroundDesktop from "../assets/home/background-home-desktop.jpg"
 
 const PrimaryHeader = styled.header`
+`
+
+const backgroundStyles = css`
+  background-image: url(${backgroundMobile});
+  background-position: center center;
+  background-size: cover;
+
+  @media (min-width: 35rem) {
+    background-image: url(${backgroundTablet});
+  }
+
+  @media (min-width: 45rem) {
+    background-image: url(${backgroundDesktop});
+    background-position: bottom center;
+  }
 `
 
 // markup
 const IndexPage = () => {
   return (
-    <div className="home pseudo-body">
+    <div className="home pseudo-body" css={backgroundStyles}>
       <Layout pageTitle="Frontend Mentor">
         <PrimaryHeader className="flex">
             <div>
