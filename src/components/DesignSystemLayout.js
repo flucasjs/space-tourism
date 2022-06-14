@@ -1,5 +1,6 @@
 import React from "react"
 import { createGlobalStyle, css } from "styled-components"
+import hamburgerIcon from "../assets/shared/icon-hamburger.svg"
 
 const customCSSProperties = css`
   :root {
@@ -291,6 +292,10 @@ const componentClasses = css`
     }
   }
 
+  .mobile-nav-toggle {
+    display: none;
+  }
+
   @media (max-width: 35rem) {
     .primary-navigation {
       --underline-gap: 0.5rem;
@@ -304,6 +309,21 @@ const componentClasses = css`
     }
 
     .primary-navigation.underline-indicator > .active {
+      border: 0;
+    }
+
+    .mobile-nav-toggle {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      z-index: 2000;
+      top: 2rem;
+      right: 1rem;
+      background-color: transparent;
+      background-image: url(${hamburgerIcon});
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      aspect-ratio: 1;
       border: 0;
     }
   }
