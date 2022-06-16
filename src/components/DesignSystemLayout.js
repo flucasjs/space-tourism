@@ -285,11 +285,20 @@ const componentClasses = css`
       background-color: hsl( var(--clr-dark) / 0.95 );
   }
 
-  @supports (backdrop-filter: blur(1.5rem)) {
+  @supports (backdrop-filter: blur(1rem)) {
     .primary-navigation {
       background-color: hsl( var(--clr-white) / 0.05 );
       backdrop-filter: blur(1.5rem);
     }
+  }
+
+  .primary-navigation a {
+    text-decoration: none;
+  }
+ 
+  .primary-navigation a > span {
+    margin-right: 0.5em;
+    font-weight: 700;
   }
 
   .mobile-nav-toggle {
@@ -306,7 +315,6 @@ const componentClasses = css`
       padding: min(20rem, 15vh) 2rem;
       margin: 0;
       flex-direction: column;
-      transform: translateX(100%);
     }
 
     .primary-navigation.underline-indicator > .active {
@@ -327,15 +335,6 @@ const componentClasses = css`
       aspect-ratio: 1;
       border: 0;
     }
-  }
-
-  .primary-navigation a {
-      text-decoration: none;
-  }
- 
-  .primary-navigation a > span {
-      margin-right: 0.5em;
-      font-weight: 700;
   }
 
   .underline-indicators > * {
