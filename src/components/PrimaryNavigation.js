@@ -1,6 +1,4 @@
-import React from 'react'
 import styled from 'styled-components'
-import hamburgerIcon from "../assets/shared/icon-hamburger.svg"
 
 const PrimaryNavigation = styled.ul`
   --underline-gap: 2rem;
@@ -14,10 +12,6 @@ const PrimaryNavigation = styled.ul`
       background-color: hsl( var(--clr-white) / 0.05 );
       backdrop-filter: blur(1.5rem);
     }
-  }
-
-  &.mobile-nav-toggle {
-    display: none;
   }
 
   @media (max-width: 35rem) {
@@ -34,21 +28,6 @@ const PrimaryNavigation = styled.ul`
     }
 
     &.underline-indicator > .active {
-      border: 0;
-    }
-
-    &.mobile-nav-toggle {
-      cursor: pointer;
-      display: block;
-      position: absolute;
-      z-index: 2000;
-      top: 2rem;
-      right: 1rem;
-      background-color: transparent;
-      background-image: url(${hamburgerIcon});
-      background-repeat: no-repeat;
-      width: 1.5rem;
-      aspect-ratio: 1;
       border: 0;
     }
   }
