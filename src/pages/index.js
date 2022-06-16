@@ -65,6 +65,10 @@ const ExitButton = styled(MenuButton)`
   }
 `
 
+const LogoContainer = styled.div`
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+`
+
 // markup
 const IndexPage = () => {
   const [isNavHidden, setNavHidden] = useState(true);
@@ -81,20 +85,20 @@ const IndexPage = () => {
     <div className="home pseudo-body" css={backgroundStyles}>
       <Layout pageTitle="Frontend Mentor">
         <PrimaryHeader className="flex">
-            <div>
+            <LogoContainer>
               <StaticImage
                 alt="Space Tourism Logo"
                 src="../assets/shared/logo.svg"
               />
-            </div>
+            </LogoContainer>
             {
-            isNavHidden ?
-            <BurgerButton onClick={handleClick} aria-controls="primary-navigation">
-              <span className="sr-only" aria-expanded="false">Menu</span>
-            </BurgerButton> :
-            <ExitButton onClick={handleClick} aria-controls="primary-navigation">
-              <span className="sr-only" aria-expanded="true">Menu</span>
-            </ExitButton>
+              isNavHidden ?
+              <BurgerButton onClick={handleClick} aria-controls="primary-navigation">
+                <span className="sr-only" aria-expanded="false">Menu</span>
+              </BurgerButton> :
+              <ExitButton onClick={handleClick} aria-controls="primary-navigation">
+                <span className="sr-only" aria-expanded="true">Menu</span>
+              </ExitButton>
             }
             <nav>
                 <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" style={isNavHidden ? {transform: "translateX(100%)"} : {transform: "translateX(0)"}}>
