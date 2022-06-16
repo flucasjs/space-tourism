@@ -12,6 +12,7 @@ import hamburgerIcon from '../assets/shared/icon-hamburger.svg'
 import closeIcon from '../assets/shared/icon-close.svg'
 
 const PrimaryHeader = styled.header`
+  justify-content: space-between;
 `
 
 const backgroundStyles = css`
@@ -77,9 +78,10 @@ const IndexPage = () => {
     setNavHidden(p => !p)
   }
 
-  useEffect(() => {
-    console.log(isNavHidden);
-  }, [isNavHidden])
+  // For testing
+  // useEffect(() => {
+  //   console.log(isNavHidden);
+  // }, [isNavHidden])
 
   return (
     <div className="home pseudo-body" css={backgroundStyles}>
@@ -101,7 +103,7 @@ const IndexPage = () => {
               </ExitButton>
             }
             <nav>
-                <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" style={isNavHidden ? {transform: "translateX(100%)"} : {transform: "translateX(0)"}}>
+                <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" {...{isNavHidden}}>
                     <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
