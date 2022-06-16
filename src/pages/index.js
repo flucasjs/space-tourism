@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled, {css} from 'styled-components'
 import Layout from '../components/Layout'
 import { StaticImage} from 'gatsby-plugin-image'
+import PrimaryNavigation from '../components/PrimaryNavigation'
 
 import backgroundMobile from "../assets/home/background-home-mobile.jpg"
 import backgroundTablet from "../assets/home/background-home-tablet.jpg"
@@ -51,12 +52,12 @@ const IndexPage = () => {
               <span className="sr-only" aria-expanded="false">Menu</span>
             </button>
             <nav>
-                <ul id="primary-navigation" className="primary-navigation underline-indicators flex" style={isNavHidden ? {transform: "translateX(0)"} : {transform: "translateX(100%)"}}>
+                <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" style={isNavHidden ? {transform: "translateX(0)"} : {transform: "translateX(100%)"}}>
                     <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>03</span>Technology</a></li>
-                </ul>
+                </PrimaryNavigation>
             </nav>
         </PrimaryHeader>
 
