@@ -25,6 +25,7 @@ const PrimaryNavigation = styled.ul`
       margin: 0;
       flex-direction: column;
       transform: translateX(100%);
+      transition: transform 250ms ease-out;
     }
 
     &.underline-indicator > .active {
