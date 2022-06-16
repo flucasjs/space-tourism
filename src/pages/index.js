@@ -4,9 +4,12 @@ import Layout from '../components/Layout'
 import { StaticImage} from 'gatsby-plugin-image'
 import PrimaryNavigation from '../components/PrimaryNavigation'
 
-import backgroundMobile from "../assets/home/background-home-mobile.jpg"
-import backgroundTablet from "../assets/home/background-home-tablet.jpg"
-import backgroundDesktop from "../assets/home/background-home-desktop.jpg"
+import backgroundMobile from '../assets/home/background-home-mobile.jpg'
+import backgroundTablet from '../assets/home/background-home-tablet.jpg'
+import backgroundDesktop from '../assets/home/background-home-desktop.jpg'
+
+import hamburgerIcon from '../assets/shared/icon-hamburger.svg'
+import closeIcon from '../assets/shared/icon-close.svg'
 
 const PrimaryHeader = styled.header`
 `
@@ -23,6 +26,44 @@ const backgroundStyles = css`
   @media (min-width: 45rem) {
     background-image: url(${backgroundDesktop});
     background-position: bottom center;
+  }
+`
+
+const BurgerButton = styled.button`
+  display: none;
+
+  @media (max-width: 35rem) {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    top: 2rem;
+    right: 1rem;
+    background-color: transparent;
+    background-image: url(${hamburgerIcon});
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
+  }
+`
+
+const ExitButton = styled.button`
+  display: none;
+
+  @media (max-width: 35rem) {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    top: 2rem;
+    right: 1rem;
+    background-color: transparent;
+    background-image: url(${closeIcon});
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
   }
 `
 
@@ -48,11 +89,17 @@ const IndexPage = () => {
                 src="../assets/shared/logo.svg"
               />
             </div>
-            <button className="mobile-nav-toggle" onClick={handleClick} aria-controls="primary-navigation">
+            {
+            isNavHidden ?
+            <BurgerButton onClick={handleClick} aria-controls="primary-navigation">
               <span className="sr-only" aria-expanded="false">Menu</span>
-            </button>
+            </BurgerButton> :
+            <ExitButton onClick={handleClick} aria-controls="primary-navigation">
+              <span className="sr-only" aria-expanded="true">Menu</span>
+            </ExitButton>
+            }
             <nav>
-                <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" style={isNavHidden ? {transform: "translateX(0)"} : {transform: "translateX(100%)"}}>
+                <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" style={isNavHidden ? {transform: "translateX(100%)"} : {transform: "translateX(0)"}}>
                     <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
