@@ -13,6 +13,7 @@ import closeIcon from '../assets/shared/icon-close.svg'
 
 const PrimaryHeader = styled.header`
   justify-content: space-between;
+  align-items: center;
 `
 
 const backgroundStyles = css`
