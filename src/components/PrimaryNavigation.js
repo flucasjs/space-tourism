@@ -24,7 +24,7 @@ const PrimaryNavigation = styled.ul`
       padding: min(20rem, 15vh) 2rem;
       margin: 0;
       flex-direction: column;
-      transform: translateX(100%);
+      transform: ${props => props.isNavHidden ? "translateX(100%)" : "translateX(0)"};
       transition: transform 250ms ease-out;
     }
 
