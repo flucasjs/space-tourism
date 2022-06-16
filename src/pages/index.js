@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, {css} from 'styled-components'
 import Layout from '../components/Layout'
 import { StaticImage} from 'gatsby-plugin-image'
@@ -27,6 +27,16 @@ const backgroundStyles = css`
 
 // markup
 const IndexPage = () => {
+  const [isNavHidden, setNavHidden] = useState(true);
+
+  const handleClick = () => {
+    setNavHidden(p => !p)
+  }
+
+  useEffect(() => {
+    console.log(isNavHidden);
+  }, [isNavHidden])
+
   return (
     <div className="home pseudo-body" css={backgroundStyles}>
       <Layout pageTitle="Frontend Mentor">
@@ -37,11 +47,11 @@ const IndexPage = () => {
                 src="../assets/shared/logo.svg"
               />
             </div>
-            <button className="mobile-nav-toggle" aria-controls="primary-navigation">
+            <button className="mobile-nav-toggle" onClick={handleClick} aria-controls="primary-navigation">
               <span className="sr-only" aria-expanded="false">Menu</span>
             </button>
             <nav>
-                <ul id="primary-navigation" className="primary-navigation underline-indicators flex">
+                <ul id="primary-navigation" className="primary-navigation underline-indicators flex" style={isNavHidden ? {transform: "translateX(0)"} : {transform: "translateX(100%)"}}>
                     <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
