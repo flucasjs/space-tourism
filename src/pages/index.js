@@ -127,7 +127,7 @@ const IndexPage = () => {
             </PrimaryNavigationWrapper>
         </PrimaryHeader>
 
-        <div className="grid-container grid-container--home">
+        <main className="grid-container grid-container--home">
           <div>
             <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
             So, you want to travel to <span className="fs-900 ff-serif text-white d-block">Space</span>
@@ -141,7 +141,7 @@ const IndexPage = () => {
           <div>
             <a href="#" className="large-button ff-serif uppercase letter-spacing-3 bg-white text-dark">Explore</a>
           </div>
-        </div>
+        </main>
       </Layout>
     </div>
   )
