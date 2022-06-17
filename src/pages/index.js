@@ -84,6 +84,21 @@ const LogoContainer = styled.div`
   margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 `
 
+const SkipToContentButton = styled.a`
+  position: absolute;
+  z-index: 9999;
+  background-color: hsl( var(--clr-white) );
+  color: hsl( var(--clr-dark) );
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-out;
+
+  &:focus {
+    transform: translateY(0);
+  }
+`
+
 // markup
 const IndexPage = () => {
   const [isNavHidden, setNavHidden] = useState(true);
@@ -100,6 +115,7 @@ const IndexPage = () => {
   return (
     <div className="home pseudo-body" css={backgroundStyles}>
       <Layout pageTitle="Frontend Mentor">
+        <SkipToContentButton href="#main">Skip to content</SkipToContentButton>
         <PrimaryHeader className="flex">
             <LogoContainer>
               <StaticImage
@@ -127,7 +143,7 @@ const IndexPage = () => {
             </PrimaryNavigationWrapper>
         </PrimaryHeader>
 
-        <main className="grid-container grid-container--home">
+        <main id="main" className="grid-container grid-container--home">
           <div>
             <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
             So, you want to travel to <span className="fs-900 ff-serif text-white d-block">Space</span>
