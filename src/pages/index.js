@@ -92,6 +92,7 @@ const IndexPage = () => {
               <StaticImage
                 alt="Space Tourism Logo"
                 src="../assets/shared/logo.svg"
+                layout="fixed"
               />
             </LogoContainer>
             {

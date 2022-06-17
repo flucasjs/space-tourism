@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const PrimaryNavigation = styled.ul`
+  --gap: clamp(1.5rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
   list-style: none;
   margin: 0;
@@ -39,6 +40,16 @@ const PrimaryNavigation = styled.ul`
 
     &.underline-indicator > .active {
       border: 0;
+    }
+  }
+
+  @media (min-width: 35rem) and (max-width: 45rem) {
+    & {
+      padding-inline: 3rem;
+    }
+
+    & a > span {
+      display: none;
     }
   }
 `
