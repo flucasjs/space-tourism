@@ -44,7 +44,9 @@ const PrimaryNavigation = styled.ul`
   }
 
   @media (min-width: 35rem) {
-    paddin-inline: clamp(3rem, 7vw, 7rem);
+    & {
+      padding-inline: clamp(3rem, 7vw, 7rem);
+    }
   }
 
   @media (min-width: 35rem) and (max-width: 45rem) {
