@@ -55,9 +55,17 @@ const PrimaryNavigation = styled.ul`
     }
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 45rem) {    
     & {
       margin-block: 2rem;
+    }
+  }
+`
+
+export const PrimaryNavigationWrapper = styled.nav`
+  @media (min-width: 45rem) {
+    & {
+      order: 2;
     }
   }
 `
