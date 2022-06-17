@@ -254,6 +254,7 @@ const componentClasses = css`
     font-size: 2rem;
     display: inline-grid;
     position: relative;
+    z-index: 1;
     place-items: center;
     padding: 0 2em;
     border-radius: 50%;
@@ -264,9 +265,10 @@ const componentClasses = css`
   .large-button::after {
     content: '';
     position: absolute;
+    z-index: -1;
     border-radius: inherit;
     inset: 0;
-    background-color: hsl( var(--clr-white) / 0. );
+    background-color: hsl( var(--clr-white) / 0.1 );
     opacity: 0;
     transition: opacity 500ms linear, transform 750ms ease-in-out;
   }
