@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled, {css} from 'styled-components'
 import Layout from '../components/Layout'
 import { StaticImage} from 'gatsby-plugin-image'
-import PrimaryNavigation from '../components/PrimaryNavigation'
+import PrimaryNavigation, { PrimaryNavigationWrapper } from '../components/PrimaryNavigation'
 
 import backgroundMobile from '../assets/home/background-home-mobile.jpg'
 import backgroundTablet from '../assets/home/background-home-tablet.jpg'
@@ -14,6 +14,19 @@ import closeIcon from '../assets/shared/icon-close.svg'
 const PrimaryHeader = styled.header`
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: 45rem) {
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      height: 1px;
+      width: 100%;
+      order: 1;
+      margin-right: -2.5rem;
+      background-color: hsl( var(--clr-white) / 0.25 );
+    }
+  }
 `
 
 const backgroundStyles = css`
@@ -104,14 +117,14 @@ const IndexPage = () => {
                 <span className="sr-only" aria-expanded="true">Menu</span>
               </ExitButton>
             }
-            <nav>
+            <PrimaryNavigationWrapper>
                 <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" {...{isNavHidden}}>
                     <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
                     <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>03</span>Technology</a></li>
                 </PrimaryNavigation>
-            </nav>
+            </PrimaryNavigationWrapper>
         </PrimaryHeader>
 
         <div className="grid-container grid-container--home">
