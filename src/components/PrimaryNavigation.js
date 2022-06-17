@@ -43,6 +43,10 @@ const PrimaryNavigation = styled.ul`
     }
   }
 
+  @media (min-width: 35rem) {
+    paddin-inline: clamp(3rem, 7vw, 7rem);
+  }
+
   @media (min-width: 35rem) and (max-width: 45rem) {
     & {
       padding-inline: 3rem;
@@ -50,6 +54,13 @@ const PrimaryNavigation = styled.ul`
 
     & a > span {
       display: none;
+    }
+  }
+
+  @media (min-width: 45rem) {
+    & {
+      margin-block: 2rem;
+      padding-inline: 7rem;
     }
   }
 `
