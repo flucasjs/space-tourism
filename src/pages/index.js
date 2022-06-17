@@ -119,10 +119,10 @@ const IndexPage = () => {
             }
             <PrimaryNavigationWrapper>
                 <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" {...{isNavHidden}}>
-                    <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span>00</span>Home</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>01</span>Destination</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>02</span>Crew</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>03</span>Technology</a></li>
+                    <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span aria-hidden="true">00</span>Home</a></li>
+                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>Destination</a></li>
+                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</a></li>
+                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">03</span>Technology</a></li>
                 </PrimaryNavigation>
             </PrimaryNavigationWrapper>
         </PrimaryHeader>
