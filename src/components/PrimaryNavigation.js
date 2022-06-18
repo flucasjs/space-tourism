@@ -62,12 +62,4 @@ const PrimaryNavigation = styled.ul`
   }
 `
 
-export const PrimaryNavigationWrapper = styled.nav`
-  @media (min-width: 45rem) {
-    & {
-      order: 2;
-    }
-  }
-`
-
 export default PrimaryNavigation
