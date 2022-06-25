@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -25,6 +26,13 @@ module.exports = {
       options: {
         name: `assets`,
         path: path.join(__dirname, `src`, `assets`),
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: path.join(__dirname, `content`),
       }
     },
   ],
