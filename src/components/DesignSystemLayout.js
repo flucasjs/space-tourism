@@ -146,38 +146,6 @@ const utilityClasses = css`
     max-width: 80rem;
   }
 
-  .grid-container {
-    display: grid;
-    text-align: center;
-    place-items: center;
-    padding-inline: 2rem;
-  }
-
-  .grid-container * {
-    max-width: 50ch;
-  }
-
-  @media (min-width: 45rem) {
-    .grid-container {
-      text-align: left;
-      grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
-      column-gap: var(--container-gap, 2rem);
-    }
-
-    .grid-container > *:first-child {
-      grid-column: 2;
-    }
-
-    .grid-container > *:last-child {
-      grid-column: 3;
-    }
-
-    .grid-container--home {
-      padding-bottom: max(6rem, 20vh);
-      align-items: end;
-    }
-  }
-
   .sr-only {
     position: absolute;
     width: 1px;
@@ -406,11 +374,64 @@ const componentClasses = css`
     color: hsl( var(--clr-dark) / 1 );
   }
 `
+const gridLayouts = css`
+  .grid-container {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .grid-container * {
+    max-width: 50ch;
+  }
+
+  /* Destination Layout */
+
+  .grid-container--destination {
+    grid-template-areas:
+      'title'
+      'image'
+      'tabs'
+      'content'
+  }
+
+  .numbered-title {
+    grid-area: title;
+  }
+
+  .grid-container--destination > img {
+    grid-area: image;
+  }
+
+  @media (min-width: 45rem) {
+    .grid-container {
+      text-align: left;
+      grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+      column-gap: var(--container-gap, 2rem);
+    }
+
+    .grid-container > *:first-child {
+      grid-column: 2;
+    }
+
+    .grid-container > *:last-child {
+      grid-column: 3;
+    }
+
+    .grid-container--home {
+      padding-bottom: max(6rem, 20vh);
+      align-items: end;
+    }
+  }
+`
+
 export const GlobalStyle = createGlobalStyle`
   ${customCSSProperties}
   ${resets}
   ${utilityClasses}
   ${componentClasses}
+  ${gridLayouts}
 `
 
 export default function DesignSystemLayout({ children }) {
