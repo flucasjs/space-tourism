@@ -404,6 +404,10 @@ const gridLayouts = css`
     grid-area: image;
   }
 
+  .image-wrapper {
+    max-width: 60%;
+  }
+
   @media (min-width: 45rem) {
     .grid-container {
       text-align: left;
