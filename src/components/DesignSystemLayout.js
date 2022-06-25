@@ -23,6 +23,11 @@ const customCSSProperties = css`
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+
+    /* letter-spacing */
+    --ls-1: 4.75px;
+    --ls-2: 2.7px;
+    --ls-3: 2.35px;
   }
 
   @media (min-width: 35em) {
