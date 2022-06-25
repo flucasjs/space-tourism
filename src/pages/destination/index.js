@@ -79,11 +79,12 @@ const Destination = ({data}) => {
         {/* grid-container--home => grid-container--destination */}
         <main id="main" className="grid-container grid-container--destination">
           <h1 className={"numbered-title"}><span aria-hidden="true">01</span>Pick Your Destination</h1>
-          <GatsbyImage 
-            image={image}
-            placeholder="blurred"
-            alt="Moon"
-          />
+          <div className="image-wrapper">
+            <GatsbyImage 
+              image={image}
+              alt="An image of the Moon."
+            />
+          </div>
 
           <div role="tablist" className="tab-list underline-indicators flex">
             <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
@@ -92,7 +93,7 @@ const Destination = ({data}) => {
             <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Titan</button>
           </div>
 
-          <article>
+          <article className="destination-info">
             <h2 className="uppercase fs-800 ff-serif">{data.destinationJson.name}</h2>
 
             <p>{data.destinationJson.description}</p>
