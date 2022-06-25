@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import { css } from 'styled-components'
-
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
+
 import Layout from '../../components/Layout'
 import SkipToContentButton from '../../components/SkipToContentButton'
 import PrimaryHeader from '../../components/PrimaryHeader'
@@ -15,6 +16,7 @@ import PrimaryNavigationWrapper from '../../components/PrimaryNavigationWrapper'
 import backgroundMobile from '../../assets/home/background-home-mobile.jpg'
 import backgroundTablet from '../../assets/home/background-home-tablet.jpg'
 import backgroundDesktop from '../../assets/home/background-home-desktop.jpg'
+
 
 const backgroundStyles = css`
   background-image: url(${backgroundMobile});
@@ -32,17 +34,16 @@ const backgroundStyles = css`
 `
 
 const Destination = ({data}) => {
+  console.log(data);
+
   const [isNavHidden, setNavHidden] = useState(true);
 
   const handleClick = () => {
     setNavHidden(p => !p)
   }
 
-  // For testing
-  // useEffect(() => {
-  //   console.log(isNavHidden);
-  // }, [isNavHidden])
-  
+  const image = getImage(data.destinationJson.images.webp)
+
   return (
     // home => destination
     <div className="destination pseudo-body" css={backgroundStyles}>
@@ -76,38 +77,62 @@ const Destination = ({data}) => {
         </PrimaryHeader>
 
         {/* grid-container--home => grid-container--destination */}
-        {/* grid-container--off is for testing purposes. */}
-        <main id="main" className="grid-container--off grid-container--destination">
-            <h1 className={"numbered-title"}><span aria-hidden="true">01</span>Pick Your Destination</h1>
+        <main id="main" className="grid-container grid-container--destination">
+          <h1 className={"numbered-title"}><span aria-hidden="true">01</span>Pick Your Destination</h1>
+          <GatsbyImage 
+            image={image}
+            placeholder="blurred"
+            alt="Moon"
+          />
 
+          <div role="tablist" className="tab-list underline-indicators flex">
+            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
+            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
+            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Titan</button>
+          </div>
+
+          <article>
+            <h2 className="uppercase fs-800 ff-serif">{data.destinationJson.name}</h2>
+
+            <p>{data.destinationJson.description}</p>
+
+            <div className="flex">
+              <div>
+                <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
+                <p className="uppercase fs-500 ff-serif">{data.destinationJson.distance}</p>
+              </div>
+              <div>
+                <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
+                <p className="uppercase fs-500 ff-serif">{data.destinationJson.travel}</p>
+              </div>
+            </div>
+          </article>
         </main>
       </Layout>
     </div>
   )
 }
 
-// export const query = graphql`
-//   query {
-//     allContentJson {
-//       edges {
-//         node {
-//           destinations {
-//             Moon {
-//               name
-//               description
-//               distance
-//               travel
-//               images {
-//                 webp
-//                 png
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query($name: String) {
+    destinationJson(name: {eq: $name}) {
+      id
+      images {
+        webp {
+          id
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      description
+      distance
+      travel
+      name
+    }
+  }
+`
 
 export default Destination
 
