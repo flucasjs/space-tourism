@@ -385,15 +385,21 @@ const gridLayouts = css`
     text-align: center;
     place-items: center;
     padding-inline: 2rem;
+    padding-bottom: 4rem;
   }
 
   .grid-container * {
     max-width: 50ch;
   }
+  
+  .numbered-title {
+    grid-area: title;
+  }
 
   /* Destination Layout */
 
   .grid-container--destination {
+    --flow-space: 2rem;
     grid-template-areas:
       'title'
       'image'
@@ -401,16 +407,39 @@ const gridLayouts = css`
       'content'
   }
 
-  .numbered-title {
-    grid-area: title;
-  }
-
   .grid-container--destination > img {
     grid-area: image;
   }
 
-  .image-wrapper {
+  .grid-container--destination > .image-wrapper {
     max-width: 60%;
+  }
+
+  .grid-container--destination > .tab-list {
+    grid-area: tabs;
+  }
+
+  .grid-container--destination > .destination-info {
+    grid-area: content;
+  }
+
+  .destination-meta {
+    flex-direction: column;
+    border-top: 1px solid hsl( var(--clr-white) / .1 );
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 35rem) {
+    .numbered-title {
+      justify-self: start;
+      margin-top: 2rem;
+    }
+
+    .destination-meta {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
 
   @media (min-width: 45rem) {
