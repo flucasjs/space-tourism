@@ -78,7 +78,7 @@ const Destination = ({data}) => {
 
         {/* grid-container--home => grid-container--destination */}
         <main id="main" className="grid-container grid-container--destination flow">
-          <h1 className={"numbered-title"}><span aria-hidden="true">01</span>Pick Your Destination</h1>
+          <h1 className="numbered-title"><span aria-hidden="true">01</span>Pick Your Destination</h1>
           <div className="image-wrapper">
             <GatsbyImage 
               image={image}
@@ -101,11 +101,11 @@ const Destination = ({data}) => {
             <div className="destination-meta flex">
               <div>
                 <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-                <p className="uppercase fs-500 ff-serif">{data.destinationJson.distance}</p>
+                <p className="uppercase ff-serif">{data.destinationJson.distance}</p>
               </div>
               <div>
                 <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-                <p className="uppercase fs-500 ff-serif">{data.destinationJson.travel}</p>
+                <p className="uppercase ff-serif">{data.destinationJson.travel}</p>
               </div>
             </div>
           </article>
