@@ -407,7 +407,7 @@ const gridLayouts = css`
       'content'
   }
 
-  .grid-container--destination > img {
+  .grid-container--destination > .image-wrapper {
     grid-area: image;
   }
 
@@ -449,17 +449,26 @@ const gridLayouts = css`
       column-gap: var(--container-gap, 2rem);
     }
 
-    .grid-container > *:first-child {
+    .grid-container--homes > *:first-child {
       grid-column: 2;
     }
 
-    .grid-container > *:last-child {
+    .grid-container--home > *:last-child {
       grid-column: 3;
     }
 
     .grid-container--home {
       padding-bottom: max(6rem, 20vh);
       align-items: end;
+    }
+
+    .grid-container--destination {
+      justify-items: start;
+
+      grid-template-areas:
+        '. title title   .'
+        '. image tabs    .'
+        '. image content .'
     }
   }
 `
