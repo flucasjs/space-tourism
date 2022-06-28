@@ -449,7 +449,7 @@ const gridLayouts = css`
       column-gap: var(--container-gap, 2rem);
     }
 
-    .grid-container--homes > *:first-child {
+    .grid-container--home > *:first-child {
       grid-column: 2;
     }
 
@@ -464,11 +464,20 @@ const gridLayouts = css`
 
     .grid-container--destination {
       justify-items: start;
-
+      align-content: start;
       grid-template-areas:
         '. title title   .'
         '. image tabs    .'
         '. image content .'
+    }
+
+    .grid-container--destination > .image-wrapper {
+      max-width: 90%;
+    }
+
+    .destination-meta {
+      --gap: 6rem;
+      justify-content: flex-start;
     }
   }
 `
