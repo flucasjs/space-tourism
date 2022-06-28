@@ -430,6 +430,10 @@ const gridLayouts = css`
     margin-top: 2.5rem;
   }
 
+  .destination-meta p {
+    font-size: 1.75rem;
+  }
+
   @media (min-width: 35rem) {
     .numbered-title {
       justify-self: start;
