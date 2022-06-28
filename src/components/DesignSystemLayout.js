@@ -388,7 +388,7 @@ const gridLayouts = css`
     padding-bottom: 4rem;
   }
 
-  .grid-container * {
+  .grid-container p:not([class]) {
     max-width: 50ch;
   }
   
@@ -480,7 +480,7 @@ const gridLayouts = css`
     }
 
     .destination-meta {
-      --gap: 6rem;
+      --gap: min(6vw, 6rem);
       justify-content: flex-start;
     }
   }
