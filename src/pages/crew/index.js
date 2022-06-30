@@ -77,8 +77,7 @@ const Crew = ({data}) => {
         </PrimaryHeader>
 
         {/* grid-container--home => grid-container--crew */}
-        {/* grid-container turned off for testing */}
-        <main id="main" className="grid-container--off grid-container--crew flow">
+        <main id="main" className="grid-container grid-container--crew flow">
           <h1 className="numbered-title"><span aria-hidden="true">01</span>Meet Your crew</h1>
 
           <div role="tablist" className="dot-indicators flex">
@@ -93,14 +92,14 @@ const Crew = ({data}) => {
             <p className="uppercase fs-700 ff-serif">{data.crewJson.name}</p>
             <p className="text-accent">{data.crewJson.bio}</p>
           </article>
-        </main>
 
-        <div className="image-wrapper">
-          <GatsbyImage 
-            image={image}
-            alt="An image of commander Douglas Hurley."
-          />
-        </div>
+          <div className="image-wrapper">
+            <GatsbyImage 
+              image={image}
+              alt="An image of commander Douglas Hurley."
+            />
+          </div>
+        </main>
       </Layout>
     </div>
   )
