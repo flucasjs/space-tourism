@@ -470,6 +470,10 @@ const gridLayouts = css`
     grid-area: content;
   }
 
+  .crew-info h2 {
+    color: hsl( var(--clr-white) / 0.5 );
+  }
+
   @media (min-width: 35rem) {
     .numbered-title {
       justify-self: start;

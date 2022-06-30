@@ -88,7 +88,7 @@ const Crew = ({data}) => {
           </div>
 
           <article className="crew-info">
-            <h3 className="uppercase fs-600 ff-serif">{data.crewJson.role}</h3>
+            <h2 className="uppercase fs-600 ff-serif">{data.crewJson.role}</h2>
             <p className="uppercase fs-700 ff-serif">{data.crewJson.name}</p>
             <p className="text-accent">{data.crewJson.bio}</p>
           </article>
