@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { css } from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -33,8 +33,8 @@ const backgroundStyles = css`
   }
 `
 
-const Destination = ({data}) => {
-  console.log(data);
+const Destination = ({data, location}) => {
+  console.log(location);
 
   const [isNavHidden, setNavHidden] = useState(true);
 
@@ -87,10 +87,19 @@ const Destination = ({data}) => {
           </div>
 
           <div role="tablist" className="tab-list underline-indicators flex">
-            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Moon</button>
-            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Mars</button>
-            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Europa</button>
-            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Titan</button>
+            {
+              data.allDestinationJson.nodes.map(node => (
+                <Link 
+                  key={node.id} 
+                  to={`/destination/${node.name.toLowerCase()}/`} 
+                  role="tab" 
+                  aria-selected="true" 
+                  className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2 no-underline"
+                >
+                  {`${node.name}`}
+                </Link>
+              ))
+            }
           </div>
 
           <article className="destination-info flow">
@@ -137,6 +146,12 @@ export const query = graphql`
       distance
       travel
       name
+    }
+    allDestinationJson {
+      nodes {
+        name
+        id
+      }
     }
   }
 `
