@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { css } from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -34,8 +34,6 @@ const backgroundStyles = css`
 `
 
 const Crew = ({data}) => {
-  console.log(data);
-
   const [isNavHidden, setNavHidden] = useState(true);
 
   const handleClick = () => {
@@ -45,7 +43,6 @@ const Crew = ({data}) => {
   const image = getImage(data.crewJson.images.webp) || getImage(data.crewJson.images.png)
 
   return (
-    // home => crew
     <div className="crew pseudo-body" css={backgroundStyles}>
       <Layout pageTitle="Frontend Mentor">
         <SkipToContentButton href="#main">Skip to content</SkipToContentButton>
@@ -68,25 +65,32 @@ const Crew = ({data}) => {
             }
             <PrimaryNavigationWrapper>
                 <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" {...{isNavHidden}}>
-                    <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span aria-hidden="true">00</span>Home</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>crew</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">03</span>Technology</a></li>
+                    <Link to={`/`} className="uppercase text-white letter-spacing-2"><span aria-hidden="true">00</span>Home</Link>
+                    <Link to={`/destination`} className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>Destination</Link>
+                    <Link to={`/crew`} className="active ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</Link>
+                    <Link to={`/technology`} className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">03</span>Technology</Link>
                 </PrimaryNavigation>
             </PrimaryNavigationWrapper>
         </PrimaryHeader>
 
-        {/* grid-container--home => grid-container--crew */}
         <main id="main" className="grid-container grid-container--crew flow">
           <h1 className="numbered-title"><span aria-hidden="true">01</span>Meet Your crew</h1>
 
           <div role="tablist" className="dot-indicators flex">
-            <button aria-selected="true"><span class="sr-only">The commander</span></button>
-            <button aria-selected="false"><span class="sr-only">The mission specialist</span></button>
-            <button aria-selected="false"><span class="sr-only">The pilot</span></button>
-            <button aria-selected="false"><span class="sr-only">The crew engineer</span></button>
+            {
+              data.allCrewJson.nodes.map(node => (
+                <Link 
+                  key={node.id} 
+                  to={`/crew/${node.name.toLowerCase().split(' ').join('-')}/`} 
+                  aria-selected={node.name === 'Douglas Hurley'}
+                  className="no-underline"
+                >
+                  <span className="sr-only">{`${node.name}`}</span>
+                </Link>
+              ))
+            }
           </div>
-
+          
           <article className="crew-info flow">
             <header className="flow flow--space-small">
               <h2 className="uppercase fs-600 ff-serif">{data.crewJson.role}</h2>
@@ -106,21 +110,6 @@ const Crew = ({data}) => {
     </div>
   )
 }
-
-{/* <h2 className="uppercase fs-800 ff-serif">{data.crewJson.name}</h2>
-
-<p>{data.crewJson.description}</p>
-
-<div className="crew-meta flex">
-  <div>
-    <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-    <p className="uppercase ff-serif">{data.crewJson.distance}</p>
-  </div>
-  <div>
-    <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-    <p className="uppercase ff-serif">{data.crewJson.travel}</p>
-  </div>
-</div> */}
 
 export const query = graphql`
   query($name: String) {
@@ -143,6 +132,12 @@ export const query = graphql`
       bio
       name
       role
+    }
+    allCrewJson {
+      nodes {
+        name
+        id
+      }
     }
   }
 `

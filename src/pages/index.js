@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import {css} from 'styled-components'
-import Layout from '../components/Layout'
+import { Link } from 'gatsby'
 import { StaticImage} from 'gatsby-plugin-image'
+import {css} from 'styled-components'
+
+import Layout from '../components/Layout'
 import PrimaryHeader from '../components/PrimaryHeader'
 import PrimaryNavigation from '../components/PrimaryNavigation'
 import PrimaryNavigationWrapper from '../components/PrimaryNavigationWrapper'
@@ -29,18 +31,12 @@ const backgroundStyles = css`
   }
 `
 
-// markup
 const IndexPage = () => {
   const [isNavHidden, setNavHidden] = useState(true);
 
   const handleClick = () => {
     setNavHidden(p => !p)
   }
-
-  // For testing
-  // useEffect(() => {
-  //   console.log(isNavHidden);
-  // }, [isNavHidden])
 
   return (
     <div className="home pseudo-body" css={backgroundStyles}>
@@ -65,10 +61,10 @@ const IndexPage = () => {
             }
             <PrimaryNavigationWrapper>
                 <PrimaryNavigation id="primary-navigation" className="underline-indicators flex" {...{isNavHidden}}>
-                    <li className="active"><a href="#" className="uppercase text-white letter-spacing-2"><span aria-hidden="true">00</span>Home</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>Destination</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</a></li>
-                    <li><a href="#" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">03</span>Technology</a></li>
+                    <Link to={`/`} className="active uppercase text-white letter-spacing-2"><span aria-hidden="true">00</span>Home</Link>
+                    <Link to={`/destination`} className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>Destination</Link>
+                    <Link to={`/crew`} className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</Link>
+                    <Link to={`/technology`} className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">03</span>Technology</Link>
                 </PrimaryNavigation>
             </PrimaryNavigationWrapper>
         </PrimaryHeader>
@@ -85,7 +81,7 @@ const IndexPage = () => {
             </p>
           </div>
           <div>
-            <a href="#" className="large-button ff-serif uppercase letter-spacing-3 bg-white text-dark">Explore</a>
+            <Link to={`/destination`} className="large-button ff-serif uppercase letter-spacing-3 bg-white text-dark">Explore</Link>
           </div>
         </main>
       </Layout>
@@ -94,19 +90,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-
-/* 
-00 Home
-01 Destination
-02 Crew
-03 Technology
-
-So, you want to travel to
-Space
-Let’s face it; if you want to go to space, you might as well genuinely go to 
-outer space and not hover kind of on the edge of it. Well sit back, and relax 
-because we’ll give you a truly out of this world experience!
-
-Explore 
-*/
