@@ -87,10 +87,10 @@ const Destination = ({data}) => {
           </div>
 
           <div role="tablist" className="tab-list underline-indicators flex">
-            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
-            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
-            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
-            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Titan</button>
+            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Moon</button>
+            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Mars</button>
+            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Europa</button>
+            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Titan</button>
           </div>
 
           <article className="destination-info">

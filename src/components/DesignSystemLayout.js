@@ -168,6 +168,7 @@ const utilityClasses = css`
   .bg-dark { background-color: hsl( var(--clr-dark) ); }
   .bg-accent { background-color: hsl( var(--clr-light) ); }
   .bg-white { background-color: hsl( var(--clr-white) ); }
+  .bg-none { background-color: transparent };
 
   .text-dark { color: hsl( var(--clr-dark) ); }
   .text-accent { color: hsl( var(--clr-light) ); }
@@ -649,9 +650,9 @@ export default function DesignSystemLayout({ children }) {
                     <div className="flow" style={{ marginBottom: "50vh", "--flow-space": "4rem" }}>
                         {/* Tabs */}
                         <div role="tablist" className="tab-list underline-indicators flex">
-                            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
-                            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
-                            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+                            <button role="tab" aria-selected="true" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Moon</button>
+                            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Mars</button>
+                            <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Europa</button>
                         </div>
                         
                         {/* Dots */}
