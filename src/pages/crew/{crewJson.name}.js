@@ -96,7 +96,7 @@ const CrewPage = ({data, location}) => {
             }
           </div>
 
-          <article className="crew-info flow">
+          <article className="crew-info flow" role="tabpanel">
             <header className="flow flow--space-small">
               <h2 className="uppercase fs-600 ff-serif">{data.crewJson.role}</h2>
               <p className="uppercase fs-700 ff-serif">{data.crewJson.name}</p>

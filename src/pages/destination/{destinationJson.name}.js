@@ -103,7 +103,7 @@ const DestinationPage = ({data, location}) => {
             }
           </div>
 
-          <article className="destination-info flow">
+          <article className="destination-info flow" role="tabpanel">
             <h2 className="uppercase fs-800 ff-serif">{data.destinationJson.name}</h2>
 
             <p>{data.destinationJson.description}</p>
