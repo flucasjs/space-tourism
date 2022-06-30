@@ -87,9 +87,11 @@ const Crew = ({data}) => {
             <button aria-selected="false"><span class="sr-only">The crew engineer</span></button>
           </div>
 
-          <article className="crew-info">
-            <h2 className="uppercase fs-600 ff-serif">{data.crewJson.role}</h2>
-            <p className="uppercase fs-700 ff-serif">{data.crewJson.name}</p>
+          <article className="crew-info flow">
+            <header className="flow flow--space-small">
+              <h2 className="uppercase fs-600 ff-serif">{data.crewJson.role}</h2>
+              <p className="uppercase fs-700 ff-serif">{data.crewJson.name}</p>
+            </header>
             <p className="text-accent">{data.crewJson.bio}</p>
           </article>
 

@@ -93,7 +93,7 @@ const Destination = ({data}) => {
             <button role="tab" aria-selected="false" className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2">Titan</button>
           </div>
 
-          <article className="destination-info">
+          <article className="destination-info flow">
             <h2 className="uppercase fs-800 ff-serif">{data.destinationJson.name}</h2>
 
             <p>{data.destinationJson.description}</p>

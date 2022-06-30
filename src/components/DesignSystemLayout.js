@@ -145,6 +145,10 @@ const utilityClasses = css`
     margin-top: var(--flow-space, 1rem);
   }
 
+  .flow--space-small {
+    --flow-space: 0.75rem;
+  }
+
   .container {
     padding-inline: 2em;
     margin-inline: auto;
