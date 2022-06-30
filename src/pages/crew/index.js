@@ -13,9 +13,9 @@ import ExitButton from '../../components/ExitButton'
 import PrimaryNavigation from '../../components/PrimaryNavigation'
 import PrimaryNavigationWrapper from '../../components/PrimaryNavigationWrapper'
 
-import backgroundMobile from '../../assets/home/background-home-mobile.jpg'
-import backgroundTablet from '../../assets/home/background-home-tablet.jpg'
-import backgroundDesktop from '../../assets/home/background-home-desktop.jpg'
+import backgroundMobile from '../../assets/crew/background-crew-mobile.jpg'
+import backgroundTablet from '../../assets/crew/background-crew-tablet.jpg'
+import backgroundDesktop from '../../assets/crew/background-crew-desktop.jpg'
 
 
 const backgroundStyles = css`
