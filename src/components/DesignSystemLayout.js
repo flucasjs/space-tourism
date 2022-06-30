@@ -418,10 +418,8 @@ const gridLayouts = css`
 
   .grid-container--destination > .image-wrapper {
     grid-area: image;
-  }
-
-  .grid-container--destination > .image-wrapper {
     max-width: 60%;
+    align-self: flex-start;
   }
 
   .grid-container--destination > .tab-list {
@@ -532,6 +530,10 @@ const gridLayouts = css`
         '. image content .'
     }
 
+    .grid-container--destination > .image-wrapper {
+      margin-top: 4rem;
+    }
+
     .grid-container--destination > .image-wrapper,
     .grid-container--crew > .image-wrapper {
       max-width: 90%;
@@ -543,10 +545,21 @@ const gridLayouts = css`
     }
 
     .grid-container--crew {
+      grid-template-columns: minmax(2rem, 1fr) minmax(0, 35rem) minmax(0, 23rem) minmax(2rem, 1fr);
       grid-template-areas:
-        '. title    title .'
+        '. title    image .'
         '. content  image .'
         '. tabs     image .'
+    }
+
+    .grid-container--crew > .image-wrapper {
+      grid-column: span 2;
+      align-self: end;
+      justify-self: start;
+    }
+
+    .grid-container--crew > .numbered-title {
+      justify-self: start;
     }
 
     .grid-container--crew > .dot-indicators {
