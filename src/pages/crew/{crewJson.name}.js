@@ -77,7 +77,7 @@ const CrewPage = ({data, location}) => {
         <main id="main" className="grid-container grid-container--crew flow">
           <h1 className="numbered-title"><span aria-hidden="true">01</span>Meet Your crew</h1>
 
-          <div role="tablist" className="dot-indicators flex">
+          <div role="tablist" className="dot-indicators flex" aria-label="crew member list">
             {
               data.allCrewJson.nodes.map(node => {
                 const crewName = node.name.toLowerCase().split(' ').join('-')

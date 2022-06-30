@@ -83,7 +83,7 @@ const DestinationPage = ({data, location}) => {
             />
           </div>
 
-          <div role="tablist" className="tab-list underline-indicators flex">
+          <div role="tablist" className="tab-list underline-indicators flex" aria-label="planet destination list">
             {
               data.allDestinationJson.nodes.map(node => {
                 const planetName = node.name.toLowerCase()

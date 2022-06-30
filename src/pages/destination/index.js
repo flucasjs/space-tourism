@@ -82,7 +82,7 @@ const Destination = ({data}) => {
             />
           </div>
 
-          <div role="tablist" className="tab-list underline-indicators flex">
+          <div role="tablist" className="tab-list underline-indicators flex" aria-label="planet destination list">
             {
               data.allDestinationJson.nodes.map(node => (
                 <Link 
