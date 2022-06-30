@@ -42,7 +42,7 @@ const Destination = ({data}) => {
     setNavHidden(p => !p)
   }
 
-  const image = getImage(data.destinationJson.images.webp)
+  const image = getImage(data.destinationJson.images.webp) || getImage(data.destinationJson.images.png);
 
   return (
     // home => destination
@@ -121,6 +121,12 @@ export const query = graphql`
       id
       images {
         webp {
+          id
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+       png {
           id
           childImageSharp {
             gatsbyImageData
