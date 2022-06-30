@@ -222,6 +222,10 @@ const utilityClasses = css`
   .outline {
     border: 3px solid var(--clr-oline, blue);
   }
+
+  .no-underline {
+    text-decoration: none;
+  }
 `
 
 const componentClasses = css`
