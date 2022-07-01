@@ -106,15 +106,15 @@ const DestinationPage = ({data, location}) => {
           <article className="destination-info flow" role="tabpanel">
             <h2 className="uppercase fs-800 ff-serif">{data.destinationJson.name}</h2>
 
-            <p>{data.destinationJson.description}</p>
+            <p className="text-accent">{data.destinationJson.description}</p>
 
             <div className="destination-meta flex">
               <div>
-                <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
+                <h3 className="uppercase text-accent fs-200 ff-sans-cond letter-spacing-3">Avg. distance</h3>
                 <p className="uppercase ff-serif">{data.destinationJson.distance}</p>
               </div>
               <div>
-                <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
+                <h3 className="uppercase text-accent fs-200 ff-sans-cond letter-spacing-3">Est. travel time</h3>
                 <p className="uppercase ff-serif">{data.destinationJson.travel}</p>
               </div>
             </div>
