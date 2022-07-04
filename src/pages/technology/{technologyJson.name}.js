@@ -18,7 +18,6 @@ import backgroundTablet from '../../assets/technology/background-technology-tabl
 import backgroundDesktop from '../../assets/technology/background-technology-desktop.jpg'
 import NumberedTitle from '../../components/NumberedTitle'
 
-
 const backgroundStyles = css`
   background-image: url(${backgroundMobile});
   background-position: center center;
@@ -82,13 +81,13 @@ const TechnologyPage = ({data, location}) => {
           <div className="image-wrapper">
             <GatsbyImage 
               image={image}
-              alt="tech."
+              alt={data.technologyJson.alt}
             />
           </div>
           <div className="image-wrapper-portrait">
             <GatsbyImage 
               image={imagePortrait}
-              alt="tech."
+              alt={data.technologyJson.alt}
             />
           </div>
 
@@ -143,6 +142,7 @@ export const query = graphql`
       }
       name
       description
+      alt
     }
     allTechnologyJson {
       nodes {

@@ -18,7 +18,6 @@ import backgroundMobile from '../../assets/crew/background-crew-mobile.jpg'
 import backgroundTablet from '../../assets/crew/background-crew-tablet.jpg'
 import backgroundDesktop from '../../assets/crew/background-crew-desktop.jpg'
 
-
 const backgroundStyles = css`
   background-image: url(${backgroundMobile});
   background-position: center center;
@@ -108,7 +107,7 @@ const CrewPage = ({data, location}) => {
           <div className="image-wrapper">
             <GatsbyImage 
               image={image}
-              alt="An image of commander Douglas Hurley."
+              alt={data.crewJson.alt}
             />
           </div>
         </main>
@@ -138,6 +137,7 @@ export const query = graphql`
       bio
       name
       role
+      alt
     }
     allCrewJson {
       nodes {

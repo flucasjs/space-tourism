@@ -80,7 +80,7 @@ const DestinationPage = ({data, location}) => {
           <div className="image-wrapper">
             <GatsbyImage 
               image={image}
-              alt="An image of the Moon."
+              alt={data.destinationJson.alt}
             />
           </div>
 
@@ -148,6 +148,7 @@ export const query = graphql`
       distance
       travel
       name
+      alt
     }
     allDestinationJson {
       nodes {
