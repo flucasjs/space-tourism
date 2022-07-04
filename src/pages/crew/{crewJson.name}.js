@@ -12,6 +12,7 @@ import BurgerButton from '../../components/BurgerButton'
 import ExitButton from '../../components/ExitButton'
 import PrimaryNavigation from '../../components/PrimaryNavigation'
 import PrimaryNavigationWrapper from '../../components/PrimaryNavigationWrapper'
+import NumberedTitle from '../../components/NumberedTitle'
 
 import backgroundMobile from '../../assets/crew/background-crew-mobile.jpg'
 import backgroundTablet from '../../assets/crew/background-crew-tablet.jpg'
@@ -75,7 +76,7 @@ const CrewPage = ({data, location}) => {
         </PrimaryHeader>
 
         <main id="main" className="grid-container grid-container--crew flow">
-          <h1 className="numbered-title"><span aria-hidden="true">02</span>Meet Your crew</h1>
+          <NumberedTitle><span aria-hidden="true">02</span>Meet Your crew</NumberedTitle>
 
           <div role="tablist" className="dot-indicators flex" aria-label="crew member list">
             {

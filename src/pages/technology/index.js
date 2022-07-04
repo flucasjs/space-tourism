@@ -12,6 +12,7 @@ import BurgerButton from '../../components/BurgerButton'
 import ExitButton from '../../components/ExitButton'
 import PrimaryNavigation from '../../components/PrimaryNavigation'
 import PrimaryNavigationWrapper from '../../components/PrimaryNavigationWrapper'
+import NumberedTitle from '../../components/NumberedTitle'
 
 import backgroundMobile from '../../assets/technology/background-technology-mobile.jpg'
 import backgroundTablet from '../../assets/technology/background-technology-tablet.jpg'
@@ -75,7 +76,7 @@ const TechnologyIndex = ({data}) => {
         </PrimaryHeader>
 
         <main id="main" className="grid-container grid-container--technology flow">
-          <h1 className="numbered-title"><span aria-hidden="true">03</span>Space Launch 101</h1>
+          <NumberedTitle><span aria-hidden="true">03</span>Space Launch 101</NumberedTitle>
 
           <div className="image-wrapper">
             <GatsbyImage 

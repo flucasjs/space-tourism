@@ -12,6 +12,7 @@ import BurgerButton from '../../components/BurgerButton'
 import ExitButton from '../../components/ExitButton'
 import PrimaryNavigation from '../../components/PrimaryNavigation'
 import PrimaryNavigationWrapper from '../../components/PrimaryNavigationWrapper'
+import NumberedTitle from '../../components/NumberedTitle'
 
 import backgroundMobile from '../../assets/destination/background-destination-mobile.jpg'
 import backgroundTablet from '../../assets/destination/background-destination-tablet.jpg'
@@ -75,7 +76,7 @@ const DestinationPage = ({data, location}) => {
         </PrimaryHeader>
 
         <main id="main" className="grid-container grid-container--destination flow">
-          <h1 className="numbered-title"><span aria-hidden="true">01</span>Pick Your Destination</h1>
+          <NumberedTitle><span aria-hidden="true">01</span>Pick Your Destination</NumberedTitle>
           <div className="image-wrapper">
             <GatsbyImage 
               image={image}
