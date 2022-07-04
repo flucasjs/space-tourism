@@ -99,6 +99,7 @@ const TechnologyPage = ({data, location}) => {
   
                 return (
                   <Link 
+                    key={node.id}
                     to={`/technology/${techName}`} 
                     role="tab" 
                     className="no-underline ff-serif fs-600" 
