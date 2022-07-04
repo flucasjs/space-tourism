@@ -37,7 +37,7 @@ const backgroundStyles = css`
 const CrewPage = ({data, location}) => {
   const [isNavHidden, setNavHidden] = useState(true);
 
-  const currentPageName = location.pathname.slice(6, location.pathname.length - 1);
+  const currentPageName = location.pathname.slice(6, location.pathname.length);
   const image = getImage(data.crewJson.images.webp) || getImage(data.crewJson.images.png)
 
   const handleClick = () => {
@@ -86,7 +86,7 @@ const CrewPage = ({data, location}) => {
                 return (
                   <Link 
                     key={node.id} 
-                    to={`/crew/${crewName}/`} 
+                    to={`/crew/${crewName}`} 
                     aria-selected={crewName === currentPageName}
                     className="no-underline"
                   >

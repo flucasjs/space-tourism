@@ -37,7 +37,7 @@ const backgroundStyles = css`
 const DestinationPage = ({data, location}) => {
   const [isNavHidden, setNavHidden] = useState(true);
 
-  const currentPageName = location.pathname.slice(13, location.pathname.length - 1);
+  const currentPageName = location.pathname.slice(13, location.pathname.length);
   const image = getImage(data.destinationJson.images.webp) || getImage(data.destinationJson.images.png);
 
   const handleClick = () => {
@@ -92,7 +92,7 @@ const DestinationPage = ({data, location}) => {
                 return (
                   <Link 
                     key={node.id} 
-                    to={`/destination/${planetName}/`} 
+                    to={`/destination/${planetName}`} 
                     role="tab" 
                     aria-selected={planetName === currentPageName}
                     className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2 no-underline"

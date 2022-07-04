@@ -96,10 +96,10 @@ const TechnologyPage = ({data, location}) => {
             {
               data.allTechnologyJson.nodes.map((node, i) => {
                 const techName = node.name.toLowerCase().split(' ').join('-')
-
+  
                 return (
                   <Link 
-                    to={`/technology/${node.name.toLowerCase().split(' ').join('-')}`} 
+                    to={`/technology/${techName}`} 
                     role="tab" 
                     className="no-underline ff-serif fs-600" 
                     aria-selected={techName === pathName}
