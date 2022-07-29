@@ -88,7 +88,7 @@ const Destination = ({data}) => {
               data.allDestinationJson.nodes.map(node => (
                 <Link 
                   key={node.id} 
-                  to={`/destination/${node.name.toLowerCase()}/`} 
+                  to={`/destination/${node.name.toLowerCase()}`} 
                   role="tab" 
                   aria-selected={node.name === 'Moon'}
                   className="uppercase ff-sans-cond text-accent bg-none letter-spacing-2 no-underline"

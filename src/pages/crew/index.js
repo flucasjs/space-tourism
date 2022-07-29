@@ -80,7 +80,7 @@ const Crew = ({data}) => {
               data.allCrewJson.nodes.map(node => (
                 <Link 
                   key={node.id} 
-                  to={`/crew/${node.name.toLowerCase().split(' ').join('-')}/`} 
+                  to={`/crew/${node.name.toLowerCase().split(' ').join('-')}`} 
                   aria-selected={node.name === 'Douglas Hurley'}
                   className="no-underline"
                 >
